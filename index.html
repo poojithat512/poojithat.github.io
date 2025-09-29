@@ -7,319 +7,277 @@
     <style>
         body {
             background: #fff;
-            color: #727272;
-            font-weight: 400;
-            font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
+            color:#595959;
             padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
+            font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            margin: 0;
         }
 
         .wrapper {
+            max-width: 1200px;
             width: 100%;
-            max-width: 1000px;
             margin: 0 auto;
-            display: block;
-            position: relative;
-            padding-left: 310px;
+            padding: 0;
         }
 
-        .sidebar {
-            width: 280px;
-            background-color: #fafafa;
-            padding: 20px;
-            border-radius: 8px;
+        header {
+            width: 250px;
+            float: left;
             position: fixed;
-            top: 10px;
-            left: 50%;
-            margin-left: -500px;
-            max-height: calc(100vh - 20px);
-            overflow-y: auto;
-            z-index: 100;
+            -webkit-font-smoothing: subpixel-antialiased;
+            padding: 15px;
+            left: calc(50% - 600px);
         }
 
-        .main-content {
-            max-width: 690px;
-            padding: 20px;
-            min-width: 0;
+        section {
+            width: 700px;
+            float: right;
+            padding: 15px;
+            padding-bottom: 50px;
+            margin-left: 280px;
         }
 
         h1 {
-            margin: 0 0 20px;
+            margin: 0 0 10px;
             color: #222;
-            font-weight: 300;
-            font-size: 26px;
-            text-align: center;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
         }
 
         h2 {
-            color: #222;
-            font-size: 22px;
-            font-weight: 300;
-            margin: 30px 0 20px 0;
+            color: #393939;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 20px 0 15px;
+            line-height: 1.2;
         }
 
         h3 {
-            color: #222;
+            color: #494949;
             font-size: 18px;
-            font-weight: 300;
-            margin: 25px 0 15px 0;
+            font-weight: 500;
+            margin: 20px 0 15px;
+            line-height: 1.2;
         }
 
         p {
-            margin: 0 0 18px;
+            margin: 0 0 15px;
             text-align: justify;
+            font-size: 13px;
         }
 
         a {
-            color: #267CB9;
+            color: #39c;
             text-decoration: none;
         }
 
-        a:hover, a:focus {
+        a:hover {
             color: #069;
-            font-weight: bold;
         }
 
         .portrait {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            margin: 15px auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
             object-fit: cover;
             display: block;
         }
 
         .navbar {
             list-style: none;
-            margin: 25px 0;
+            margin: 15px 0;
             padding: 0;
         }
 
-        .navbar_li {
-            margin: 8px 0;
-            padding: 10px;
-            border-radius: 5px;
+        .navbar li {
+            margin: 5px 0;
         }
 
-        .navbar_li a {
-            color: #267CB9;
+        .navbar a {
+            color: #39c;
             text-decoration: none;
             font-weight: 500;
+            font-size: 13px;
         }
 
-        .navbar_li a:hover {
+        .navbar a:hover {
             color: #069;
-            font-weight: bold;
-        }
-
-        #selected {
-            background-color: #e8f4f8;
-            border-left: 4px solid #267CB9;
         }
 
         .social-icons {
-            margin: 20px 0;
+            margin: 15px 0;
             text-align: center;
         }
 
         .social-icons a {
-            margin: 0 8px;
-            font-size: 28px;
+            margin: 0 5px;
+            font-size: 20px;
             color: #666;
             text-decoration: none;
             display: inline-block;
         }
 
         .social-icons a:hover {
-            color: #267CB9;
-            transform: scale(1.1);
+            color: #39c;
         }
 
-        .email-placeholder {
-            background-color: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 12px;
+        .email-text {
+            font-size: 11px;
             color: #666;
-            border: 1px solid #ddd;
-            margin: 15px 0;
+            margin: 10px 0;
+            word-wrap: break-word;
             text-align: center;
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         /* Research Highlights Table */
-        .research-table {
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 0 0 20px;
         }
 
-        .research-table tr {
+        th, td {
+            text-align: left;
+            padding: 12px 8px;
             border-bottom: 1px solid #e5e5e5;
-        }
-
-        .research-table td {
             vertical-align: top;
-            padding: 15px 10px 15px 0;
         }
 
         .workPicture {
-            width: 120px;
-            height: 80px;
+            width: 100px;
+            height: 70px;
             object-fit: cover;
             border: 1px solid #ccc;
-            margin-right: 15px;
+            margin-right: 10px;
             border-radius: 4px;
         }
 
         .paper-title {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.4;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .paper-venue {
             font-style: italic;
             color: #e74c3c;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
         }
 
         .paper-description {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.4;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .paper-authors {
-            font-size: 14px;
+            font-size: 12px;
             line-height: 1.4;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .button {
             display: inline-block;
-            background-color: #267CB9;
+            background-color: #39c;
             color: white !important;
-            padding: 4px 8px;
+            padding: 4px 10px;
             margin: 2px 5px 2px 0;
             text-decoration: none;
             border-radius: 3px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: normal;
         }
 
         .button:hover {
-            background-color: #1e5f8c;
-            font-weight: normal;
+            background-color: #069;
+            color: white !important;
         }
 
         /* News List */
-        .news-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        ul {
+            margin: 0 0 20px;
+            padding-left: 20px;
         }
 
-        .news-list li {
+        ul li {
             margin: 8px 0;
-            padding: 5px 0;
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
-        /* Footer */
-        .footer {
+        small {
+            font-size: 11px;
+        }
+
+        .footer-text {
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid #e5e5e5;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #999;
         }
 
         /* Mobile responsiveness */
-        @media (max-width: 800px) {
-            .wrapper {
-                padding-left: 10px;
-                padding-right: 10px;
+        @media screen and (max-width: 600px) {
+            header, section {
+                float: none;
+                position: static;
+                width: 100% !important;
+                padding: 10px;
             }
             
-            .sidebar {
-                position: static;
-                width: 100%;
-                margin: 0 0 20px 0;
-                left: auto;
-            }
-
-            .main-content {
-                max-width: 100%;
-            }
-
-            .research-table,
-            .research-table tr,
-            .research-table td {
+            table, tr, td {
                 display: block;
             }
 
             .workPicture {
-                width: 100px;
-                height: 60px;
-                margin-bottom: 10px;
+                width: 100%;
+                max-width: 200px;
+                height: 120px;
+                margin: 0 auto 10px;
             }
         }
     </style>
   </head>
-    <body>
-        <div class="wrapper">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="/api/placeholder/120/120" alt="Portrait" class="portrait">
         <h1>Poojitha Thota</h1>
+        
+        <p class="email-text">poojitha.thota@mavs.uta.edu</p>
 
-        <div class="contact-info">
-            <!-- Portrait -->
-            <img src="/api/placeholder/150/150" alt="Portrait" class="portrait">
-
-            <!-- Email -->
-            <div class="email-placeholder">poojitha.thota@mavs.uta.edu</div>
-
-            <!-- Social Links -->
-            <div class="social-icons">
-                <a href="#" title="CV">📄</a>
-                <a href="#" title="GitHub">⚡</a>
-                <a href="#" title="Google Scholar">🎓</a>
-                <a href="https://www.linkedin.com/in/poojitha-thota/" title="LinkedIn">💼</a>
-                <a href="#" title="Twitter">🐦</a>
-            </div>
+        <div class="social-icons">
+            <a href="#" title="CV">📄</a>
+            <a href="#" title="GitHub">⚡</a>
+            <a href="#" title="Google Scholar">🎓</a>
+            <a href="https://www.linkedin.com/in/poojitha-thota/" title="LinkedIn">💼</a>
+            <a href="#" title="Twitter">🐦</a>
         </div>
 
-        <!-- Navigation -->
         <ul class="navbar">
-            <li class="navbar_li" id="selected"><a href="#">Home</a></li>
-            <li class="navbar_li"><a href="#">Blog @Medium</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog @Medium</a></li>
         </ul>
-    </div>
+      </header>
 
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
-        <h2>Hello!</h2>
-
+      <section>
+        <h2>About</h2>
         <p>
         I am a PhD Candidate in Computer Science and Engineering at the University of Texas at Arlington, advised by Prof. <a href="#">Shirin Nilizadeh</a>.
         My research focus lies at the intersection of Security, Privacy, and Machine Learning with the aim of building 
         robust and secure AI systems. I've been exploring vulnerabilities in modern AI systems, particularly in large language models and vision-language models, 
         earning recognition for my work on adversarial attacks and phishing detection in commercial LLMs.
-        I am passionate about developing defenses against adversarial attacks and data poisoning, with recent work spanning from text summarization models to medical imaging applications.
-        I am a recipient of several awards including the Distinguished Paper Award at IEEE S&P 2024.
         </p>
+        
+        <p>I am passionate about developing defenses against adversarial attacks and data poisoning, with recent work spanning from text summarization models to medical imaging applications.
+        I am a recipient of several awards including the Distinguished Paper Award at IEEE S&P 2024.</p>
         
         <p>Before starting my PhD, I worked in the industry at Hyundai Mobis as a Graduate Engineer, focusing on automotive software development. 
         I received my Master's and Bachelor's degrees in Computer Science and Electronics & Communication respectively. 
@@ -329,84 +287,80 @@
         <p>I am always open to new collaborations and discussions about AI security research. Feel free to reach out if you want to chat about research or if you're looking for mentorship in security and privacy!</p>
 
         <h3>Recent News</h3>
-
-        <ul class="news-list">
-          <li> Spring 2025: Started new research position focusing on robust defenses for adversarial attacks against LLMs! 🎉 </li>
-          <li> Fall 2024: Completed successful internship at Google Cloud Responsible AI team! </li>
-          <li> October 2024: Paper accepted at EMNLP 2024 on attacks against text summarization models! 🎉 </li>
-          <li> May 2024: Received Distinguished Paper Award at IEEE S&P 2024 for PhishBots research! 🏆 </li>
-          <li> April 2024: Presented adversarial attack work on medical VLMs at IEEE ISBI 2024. </li>
-          <li> 2024: Published comprehensive SoK on content moderation at IEEE EuroS&P. </li>
-          <li> 2023: Contributed to phishing detection research resulting in 98% accuracy classifier. </li>
-          <li> 2022-2024: Multiple papers on adversarial robustness of LLMs and VLMs. </li>
+        <ul>
+          <li>Spring 2025: Started new research position focusing on robust defenses for adversarial attacks against LLMs!</li>
+          <li>Fall 2024: Completed successful internship at Google Cloud Responsible AI team!</li>
+          <li>October 2024: Paper accepted at EMNLP 2024 on attacks against text summarization models!</li>
+          <li>May 2024: Received Distinguished Paper Award at IEEE S&P 2024 for PhishBots research!</li>
+          <li>April 2024: Presented adversarial attack work on medical VLMs at IEEE ISBI 2024.</li>
+          <li>2024: Published comprehensive SoK on content moderation at IEEE EuroS&P.</li>
+          <li>2023: Contributed to phishing detection research resulting in 98% accuracy classifier.</li>
+          <li>2022-2024: Multiple papers on adversarial robustness of LLMs and VLMs.</li>
         </ul>
 
         <h3>Research Highlights</h3>
         
-        <table class="research-table">
-            <!-- Paper 1 -->
+        <table>
             <tr>
-                <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="Privacy Policy Analysis">
+                <td style="width: 110px;">
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="Privacy Policy Analysis">
                 </td>
                 <td>
                     <div class="paper-title">
-                        <a href="#"> Transparency or Deception: Subtle Manipulations to Trick Automated Privacy Policy Analyzer Tools</a>
+                        <a href="#">Transparency or Deception: Subtle Manipulations to Trick Automated Privacy Policy Analyzer Tools</a>
                     </div>
                     <div class="paper-venue">Submitted to USENIX 2025</div>
                     <div class="paper-description">
-                        Developed a novel framework to expose vulnerabilities in automated privacy policy analysis systems using multi-level adversarial text perturbations, with ongoing research into robust defense strategies.
+                        Developed a novel framework to expose vulnerabilities in automated privacy policy analysis systems using multi-level adversarial text perturbations.
                     </div>
                     <div class="paper-authors">
-                        <b>Poojitha Thota</b>, Tanusree Tithy, <a href="#">Shirin Nilizadeh</a>, Faysal Shezan.
+                        <strong>Poojitha Thota</strong>, Tanusree Tithy, <a href="#">Shirin Nilizadeh</a>, Faysal Shezan.
                     </div>
-                    <div style="margin-top: 10px;">
-                        <a href="#" class="button">PAPER (Under Review)</a>
-                        <a href="#" class="button">CODE</a>
-                    </div>
-                </td>
-            </tr>
-
-            <!-- Paper 2 -->
-            <tr>
-                <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="Text Summarization Attack">
-                </td>
-                <td>
-                    <div class="paper-title">
-                        <a href="#"> Attacks against Abstractive Text Summarization Models through Lead Bias and Influence Functions</a>
-                    </div>
-                    <div class="paper-venue">EMNLP 2024</div>
-                    <div class="paper-description">
-                        Investigated vulnerabilities in text summarization models through adversarial perturbations and data poisoning attacks. Identified and exploited inherent biases using influence functions to effectively poison datasets.
-                    </div>
-                    <div class="paper-authors">
-                        <b>Poojitha Thota</b>, <a href="#">Shirin Nilizadeh</a>.
-                    </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                         <a href="#" class="button">PAPER</a>
                         <a href="#" class="button">CODE</a>
                     </div>
                 </td>
             </tr>
 
-            <!-- Paper 3 -->
             <tr>
                 <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="PhishBots Research">
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="Text Summarization Attack">
                 </td>
                 <td>
                     <div class="paper-title">
-                        <a href="https://arxiv.org/abs/2310.19181"> From Chatbots to Phishbots?: Phishing Scam Generation in Commercial Large Language Models</a>
+                        <a href="#">Attacks against Abstractive Text Summarization Models through Lead Bias and Influence Functions</a>
+                    </div>
+                    <div class="paper-venue">EMNLP 2024</div>
+                    <div class="paper-description">
+                        Investigated vulnerabilities in text summarization models through adversarial perturbations and data poisoning attacks using influence functions.
+                    </div>
+                    <div class="paper-authors">
+                        <strong>Poojitha Thota</strong>, <a href="#">Shirin Nilizadeh</a>.
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <a href="#" class="button">PAPER</a>
+                        <a href="#" class="button">CODE</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="PhishBots Research">
+                </td>
+                <td>
+                    <div class="paper-title">
+                        <a href="https://arxiv.org/abs/2310.19181">From Chatbots to Phishbots?: Phishing Scam Generation in Commercial Large Language Models</a>
                     </div>
                     <div class="paper-venue">IEEE S&P 2024 - Distinguished Paper Award</div>
                     <div class="paper-description">
-                        Explored capabilities of commercial LLMs to produce evasive phishing attacks by crafting malicious prompts. Designed a classifier for early detection of malicious prompts achieving 98% accuracy using fine-tuned RoBERTa.
+                        Explored capabilities of commercial LLMs to produce evasive phishing attacks. Designed a classifier achieving 98% accuracy for malicious prompt detection.
                     </div>
                     <div class="paper-authors">
-                        Roy, Sayak Saha, <b>Poojitha Thota</b>, Krishna Vamsi Naragam, <a href="#">Shirin Nilizadeh</a>.
+                        Roy, Sayak Saha, <strong>Poojitha Thota</strong>, Krishna Vamsi Naragam, <a href="#">Shirin Nilizadeh</a>.
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                         <a href="https://arxiv.org/abs/2310.19181" class="button">PAPER</a>
                         <a href="https://huggingface.co/phishbot/ScamLLM" class="button">MODEL</a>
                         <a href="#" class="button">CODE</a>
@@ -414,68 +368,65 @@
                 </td>
             </tr>
 
-            <!-- Paper 4 -->
             <tr>
                 <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="Medical VLM Attack">
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="Medical VLM Attack">
                 </td>
                 <td>
                     <div class="paper-title">
-                        <a href="https://arxiv.org/abs/2401.02565"> Demonstration of an Adversarial Attack Against a Multimodal Vision Language Model for Pathology Imaging</a>
+                        <a href="https://arxiv.org/abs/2401.02565">Demonstration of an Adversarial Attack Against a Multimodal Vision Language Model for Pathology Imaging</a>
                     </div>
                     <div class="paper-venue">IEEE ISBI 2024</div>
                     <div class="paper-description">
-                        Evaluated and exposed vulnerabilities in pre-trained Vision-Language models, notably PLIP, for pathology imaging. Successfully implemented Projected Gradient Descent attacks with 100% success rate.
+                        Evaluated vulnerabilities in pre-trained Vision-Language models for pathology imaging. Implemented PGD attacks with 100% success rate.
                     </div>
                     <div class="paper-authors">
-                        <b>Poojitha Thota</b>, Jai Prakash Veerla, Partha Sai Guttikonda, Mohammad S. Nasr, <a href="#">Shirin Nilizadeh</a>, Jacob M. Luber.
+                        <strong>Poojitha Thota</strong>, Jai Prakash Veerla, Partha Sai Guttikonda, Mohammad S. Nasr, <a href="#">Shirin Nilizadeh</a>, Jacob M. Luber.
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                         <a href="https://arxiv.org/abs/2401.02565" class="button">PAPER</a>
                         <a href="#" class="button">CODE</a>
                     </div>
                 </td>
             </tr>
 
-            <!-- Paper 5 -->
             <tr>
                 <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="Content Moderation">
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="Content Moderation">
                 </td>
                 <td>
                     <div class="paper-title">
-                        <a href="#"> SoK: Content Moderation in Social Media, from Guidelines to Enforcement, and Research to Practice</a>
+                        <a href="#">SoK: Content Moderation in Social Media, from Guidelines to Enforcement, and Research to Practice</a>
                     </div>
                     <div class="paper-venue">IEEE EuroS&P 2023</div>
                     <div class="paper-description">
-                        Comprehensive systematization of knowledge on content moderation in social media platforms, analyzing the gap between guidelines and enforcement mechanisms with focus on hate speech and misinformation countermeasures.
+                        Comprehensive systematization of knowledge on content moderation in social media platforms, analyzing guidelines and enforcement mechanisms.
                     </div>
                     <div class="paper-authors">
-                        Mohit Singhal, Chen Ling, Pujan Paudel, <b>Poojitha Thota</b>, Nihal Kumarswamy, Gianluca Stringhini, <a href="#">Shirin Nilizadeh</a>.
+                        Mohit Singhal, Chen Ling, Pujan Paudel, <strong>Poojitha Thota</strong>, Nihal Kumarswamy, Gianluca Stringhini, <a href="#">Shirin Nilizadeh</a>.
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                         <a href="#" class="button">PAPER</a>
                     </div>
                 </td>
             </tr>
 
-            <!-- Paper 6 -->
             <tr>
                 <td>
-                    <img class="workPicture" src="/api/placeholder/120/80" alt="COVID-19 Analysis">
+                    <img class="workPicture" src="/api/placeholder/100/70" alt="COVID-19 Analysis">
                 </td>
                 <td>
                     <div class="paper-title">
-                        <a href="#"> Web scraping of covid-19 news stories to create datasets for sentiment and emotion analysis</a>
+                        <a href="#">Web scraping of covid-19 news stories to create datasets for sentiment and emotion analysis</a>
                     </div>
                     <div class="paper-venue">PETRA 2021</div>
                     <div class="paper-description">
-                        Analyzed emotion and sentiment in leader's statements and news stories to understand their impact on COVID-19 cases. Built web scraper and applied BERT-based NLP techniques achieving 85.2% accuracy.
+                        Analyzed emotion and sentiment in leader's statements and news stories using BERT-based NLP techniques achieving 85.2% accuracy.
                     </div>
                     <div class="paper-authors">
-                        <b>Poojitha Thota</b>, <a href="#">Elmasri Ramez</a>.
+                        <strong>Poojitha Thota</strong>, <a href="#">Elmasri Ramez</a>.
                     </div>
-                    <div style="margin-top: 10px;">
+                    <div style="margin-top: 8px;">
                         <a href="#" class="button">PAPER</a>
                         <a href="#" class="button">DATASET</a>
                     </div>
@@ -483,12 +434,6 @@
             </tr>
         </table>
 
-        <div class="footer">
-            <p>Website is inspired by <a href="https://github.com/orderedlist/minimal">minimal</a> design<br>
-            &copy; Poojitha Thota 2025</p>
-        </div>
-    </div>
-
-    </div>
-  </body>
-</html>
+        <div class="footer-text">
+            <p>Website inspired by <a href="https://github.com/orderedlist/minimal">minimal</a> theme<br>
+            &copy; 2025 Po
